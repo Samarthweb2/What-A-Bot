@@ -1,0 +1,1 @@
+Five people are working in this repo concurrently. Each owns specific files listed in docs/OWNERSHIP.md. No one edits another owner's files without a PR reviewed by Nikhil. docs/CONTRACTS.md is frozen and authoritative after 1:15 PM today.
