@@ -1,0 +1,63 @@
+<!-- Filled from real `events`/`orders`/`outbox` rows.
+     Fields required by Section L:
+       - normalized constraints
+       - actual candidate rows returned by find_options
+       - model-selected quantities
+       - validation result
+       - quote/order ID + status
+       - stock before/after
+       - outbox state
+       - observed latency/cost
+       - proxy results with stated limitations -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EmberGround — Evidence Panel</title>
+  <style>
+    body { font-family: sans-serif; margin: 2rem; line-height: 1.5; }
+    section { margin-bottom: 2rem; padding: 1rem; border: 1px solid #ccc; }
+    h2 { margin-top: 0; }
+  </style>
+</head>
+<body>
+  <h1>Evidence Panel</h1>
+
+  <section>
+    <h2>Order Data</h2>
+    <ul>
+      <li><strong>Quote/Order ID + Status:</strong> {{ order_id }} / {{ quote_code }} — {{ status }}</li>
+      <li><strong>Normalized Constraints:</strong> {{ constraints | tojson }}</li>
+      <li><strong>Validation Result:</strong> {{ validation_result }}</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Model & Tool Traces</h2>
+    <ul>
+      <li><strong>Actual Candidate Rows (find_options):</strong> {{ candidate_rows | tojson }}</li>
+      <li><strong>Model-Selected Quantities:</strong> {{ model_selected_quantities | tojson }}</li>
+      <li><strong>Stock Before/After:</strong> {{ stock_before }} &rarr; {{ stock_after }}</li>
+      <li><strong>Outbox State:</strong> {{ outbox_state }}</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Observed Latency & Cost</h2>
+    <ul>
+      <li><strong>Latency:</strong> [{{ latency_ms }} ms]</li>
+      <li><strong>Cost (Model + Twilio + Meta):</strong> [₹ {{ total_cost }}]</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Proxy Results & Limitations</h2>
+    <p>We tested the workflow with [N] proxies — not merchants — and observed:</p>
+    <ul>
+      <li><strong>Manual vs Agent time:</strong> [Placeholder Time Data]</li>
+      <li><strong>Validity/Corrections:</strong> [Placeholder Validity Data]</li>
+    </ul>
+    <p><em>Limitations:</em> Data and authorization are tenant-scoped. This prototype intentionally runs one process; production throughput and merchant onboarding are not established.</p>
+  </section>
+
+</body>
+</html>

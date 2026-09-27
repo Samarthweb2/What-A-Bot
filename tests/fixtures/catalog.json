@@ -1,0 +1,22 @@
+{
+  "business_id": "demo-stationery-1",
+  "items": [
+    {"sku": "A", "name": "Notebook A", "brand": "BrandA", "ruling": "ruled",   "size": "A5", "unit_price_paise": 4000, "qty": 5},
+    {"sku": "B", "name": "Notebook B", "brand": "BrandB", "ruling": "ruled",   "size": "A5", "unit_price_paise": 5000, "qty": 4},
+    {"sku": "C", "name": "Notebook C", "brand": "BrandC", "ruling": "ruled",   "size": "A5", "unit_price_paise": 6000, "qty": 5},
+    {"sku": "D", "name": "Notebook D", "brand": "BrandD", "ruling": "unruled", "size": "A5", "unit_price_paise": 2500, "qty": 30}
+  ],
+  "flagship_task": {
+    "text": "12 A5 ruled notebooks, mixed brands allowed, maximum ₹600.",
+    "quantity": 12,
+    "budget_paise": 60000,
+    "ruling": "ruled",
+    "size": "A5",
+    "allow_mixed_brands": true
+  },
+  "expected_by_stock_A": {
+    "5": {"feasible_baskets": 4, "min_cost_paise": 58000},
+    "4": {"feasible_baskets": 1, "min_cost_paise": 60000, "basket": {"A": 4, "B": 4, "C": 4}},
+    "3": {"feasible_baskets": 0, "min_cost_for_12_paise": 62000}
+  }
+}
